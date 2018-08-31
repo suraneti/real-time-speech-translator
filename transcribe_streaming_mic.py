@@ -29,6 +29,7 @@ Example usage:
 from __future__ import division
 
 import numpy as np
+import pyaudio
 import re
 import sys
 import threading
@@ -39,13 +40,12 @@ from google.cloud import translate
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
-import pyaudio
 from six.moves import queue
 # [END import_libraries]
 
 # Audio recording parameters
 RATE = 16000
-CHUNK = int(RATE / 5)  # 100ms
+CHUNK = int(RATE / 10)  # 100ms
 
 # Instantiates a client
 translate_client = translate.Client()
