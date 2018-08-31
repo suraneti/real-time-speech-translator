@@ -25,8 +25,7 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     pip install -r requirements.txt
     ```
     
-3. You must sign up Google Cloud and create project with Google Speech-to-Text API and Google Text-Translation API and
-download json secret key to use with google api (*just following google quick start).
+3. You must sign up Google Cloud account and create project with Google Speech-to-Text API and Google Text-Translation API and download json secret key to use with google api (just following google quick start).
 
 
 4. Run code and speech (have fun).
