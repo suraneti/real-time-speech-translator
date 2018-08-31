@@ -30,9 +30,10 @@ download json secret key to use with google api (*just following google quick st
 
 
 4. Run code and speech (have fun).
-  ```
-  python transcribe_streaming_mic.py
-  ```
+    ```
+    python transcribe_streaming_mic.py
+    ```
   
 ps. you must load json secret key in every session then you can run script (if you dont it will error).
+
 ps2. if you dont understand how to load json secret key in session just follow google cloud api quick start.
