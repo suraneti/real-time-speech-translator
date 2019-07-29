@@ -1,3 +1,7 @@
+# Real Time Speech Translator
+
+> implement with Google Cloud Service
+
 ## Intro
 
 Real time speech to text with multi language translation by using Google Speech-to-Text API and Google Text-Translation API,
