@@ -7,7 +7,7 @@ this version will recognize Thai speech and translate to English and Deutsch. (I
 
 Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pillow
 
-### Getting started
+## Getting started
 
 1. Clone this project and create virtualenv (recommended) and activate virtualenv.
     ```
@@ -34,6 +34,7 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     python transcribe_streaming_mic.py
     ```
   
-Note: You must load json secret key in every session then you can run a script (if you dont it will error).
+### Note: 
 
+You must load json secret key in every session then you can run a script (if you dont it will error).  
 If you dont understand how to load json secret key in session just follow google cloud api quick start [here](https://cloud.google.com/iam/docs/quickstart-client-libraries).
