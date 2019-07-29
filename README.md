@@ -33,6 +33,6 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     python transcribe_streaming_mic.py
     ```
   
-ps. you must load json secret key in every session then you can run script (if you dont it will error).
+Note: You must load json secret key in every session then you can run a script (if you dont it will error).
 
-ps2. if you dont understand how to load json secret key in session just follow google cloud api quick start.
+If you dont understand how to load json secret key in session just follow google cloud api quick start [here](https://cloud.google.com/iam/docs/quickstart-client-libraries).
