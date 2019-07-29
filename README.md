@@ -11,12 +11,13 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
 
 1. Clone this project and create virtualenv (recommended) and activate virtualenv.
     ```
-    virtaulenv -p python3 env
+    # Create virtualenv
+    virtualenv -p python3 env
  
-    Linux
+    # Linux
     source env/bin/activate
     
-    Windows
+    # Windows
     env\Scripts\activate
     ```
     
@@ -25,7 +26,7 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     pip install -r requirements.txt
     ```
     
-3. You must sign up Google Cloud account and create project with Google Speech-to-Text API and Google Text-Translation API and download json secret key to use with google api (just following google quick start).
+3. You must sign up Google Cloud account and create project with [Google Speech-to-Text API](https://cloud.google.com/speech-to-text/) and [Google Text-Translation API](https://cloud.google.com/translate/) and download json secret key to use with google api (just following google quick start [here](https://cloud.google.com/iam/docs/quickstart-client-libraries)).
 
 
 4. Run code and speech (have fun).
