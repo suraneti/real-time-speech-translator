@@ -146,9 +146,11 @@ def initial_video():
     # Start microphone stream threading
     threading.Thread(target=main).start()
 
-    # Set camera
+    # Set camera device
     camera = cv2.VideoCapture(0)
+    # Set camera width
     camera.set(3,1200)
+    # Set camera height
     camera.set(4,1200)
 
     # Set font
@@ -178,9 +180,9 @@ def initial_video():
                 draw.text((75, 585),  "EN: " + translated_data['en'], font=font, fill=(255,255,255,0))
                 # Write Deutsch text     
                 draw.text((75, 625),  "DE: " + translated_data['de'], font=font, fill=(255,255,255,0))
-                # Write demo text
+                # Write demo word text
                 draw.text((20, -5),  "Demo", font=font, fill=(255,255,255,0))
-                # Write Date Time
+                # Write timestamp
                 draw.text((910, -5), time.strftime("%Y/%m/%d %H:%M:%S %Z", time.localtime()), font=font, fill=(255,255,255,0))   
                 # Write all text into frame
                 frame = np.array(img_pil)
@@ -271,8 +273,8 @@ def listen_print_loop(responses):
         ########################
         print(result.stability)
         if result.stability >= 0.899:
-            resp = transcript + overwrite_chars
-            text_translation(resp)
+            responses = transcript + overwrite_chars
+            text_translation(responses)
             MicrophoneStream(RATE, CHUNK)._clear_buffer()
         else:
             sys.stdout.write(transcript + overwrite_chars + '\r')
@@ -303,6 +305,7 @@ def listen_print_loop(responses):
 def main():
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
+    # The language code you speak.
     language_code = 'th-TH'  # a BCP-47 language tag
 
     client = speech.SpeechClient()
@@ -314,6 +317,7 @@ def main():
         config=config,
         interim_results=True)
 
+    # Initial loop value
     rounds = 1
     while True:
         try:
@@ -321,15 +325,14 @@ def main():
             with MicrophoneStream(RATE, CHUNK) as stream:
                 audio_generator = stream.generator()
                 # Create request data
-                requests = (types.StreamingRecognizeRequest(audio_content=content)
-                            for content in audio_generator)
+                requests = (types.StreamingRecognizeRequest(audio_content=content) for content in audio_generator)
                 # POST data to google cloud speech
                 responses = client.streaming_recognize(streaming_config, requests)
                 # Now, put the transcription responses to use.
                 listen_print_loop(responses)
         except Exception as err:
             print(err)
-            rounds = rounds + 1
+            rounds += 1
 
 
 if __name__ == '__main__':
