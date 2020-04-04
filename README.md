@@ -18,7 +18,7 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     # Create virtualenv
     virtualenv -p python3 env
  
-    # Linux
+    # Linux/MacOS
     source env/bin/activate
     
     # Windows
@@ -38,7 +38,7 @@ Python3, google-cloud-speech, google-cloud-translate, opencv-python, pyaudio, pi
     python transcribe_streaming_mic.py
     ```
   
-### Note: 
+### Caution!
 
 You must load json secret key in every session then you can run a script (if you dont it will error).  
-If you dont understand how to load json secret key in session just follow google cloud api quick start [here](https://cloud.google.com/iam/docs/quickstart-client-libraries).
+If you don't know how to load json secret key in session just follow google cloud api quick start [here](https://cloud.google.com/iam/docs/quickstart-client-libraries).
