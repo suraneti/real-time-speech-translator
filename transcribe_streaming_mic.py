@@ -36,10 +36,10 @@ import threading
 import time
 
 from PIL import ImageFont, ImageDraw, Image
-from google.cloud import translate
-from google.cloud import speech
-from google.cloud.speech import enums
-from google.cloud.speech import types
+from google.cloud import translate_v2 as translate
+from google.cloud import speech_v1 as speech
+from google.cloud.speech_v1 import enums
+from google.cloud.speech_v1 import types
 from six.moves import queue
 # [END import_libraries]
 
